@@ -1,0 +1,15 @@
+name: argo-selective-prediction
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - lightgbm
+  - matplotlib
+  - pip
+  - pip:
+      - wfdb
+      - jupyter

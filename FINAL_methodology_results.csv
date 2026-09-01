@@ -1,0 +1,27 @@
+Item,Final result
+Primary endpoint,Consensus AVP vs physiological classification
+Signal input,750 ms bipolar intracardiac electrogram
+Predictors,43 engineered signal features
+Primary algorithm,LightGBM
+Primary validation,Nested leave-one-patient-out (9 outer folds)
+Pooled accuracy,0.9324
+Pooled balanced accuracy,0.9339
+Macro patient-balanced accuracy,0.9334
+Macro patient-balanced accuracy 95% patient-cluster bootstrap CI,0.9101–0.9572
+Pooled AUROC,0.9720
+Pooled AUROC 95% patient-cluster bootstrap CI,0.9589–0.9844
+Brier score,0.0537
+ECE10,0.0274
+Calibration decision,Keep raw probabilities; Platt calibration had no significant patient-level benefit
+Selective thresholding,Threshold learned only from outer-training patient OOF predictions
+Target coverage,80%
+Realized held-out coverage,0.7815
+Accuracy after training-derived abstention,0.9739
+Balanced accuracy after training-derived abstention,0.9782
+Mean patientwise accuracy gain,0.0408
+Accuracy-gain one-sided Wilcoxon p,0.001953
+Mean expert-disagreement enrichment among abstentions,0.2060
+Disagreement-enrichment one-sided Wilcoxon p,0.013672
+Temporal sensitivity,"750 ms chosen; 500–1500 ms broadly robust, 250 ms inadequate"
+Dominant stable feature,Peak-to-peak amplitude; positive held-out permutation importance in 9/9 patients
+Unipolar/geometry decision,Excluded from primary model; no patient-held-out performance benefit
